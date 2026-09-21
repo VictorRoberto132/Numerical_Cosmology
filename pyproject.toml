@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cosmo_library"
+version = "0.1.0"
+description = "FLRW background cosmology and Bayesian analysis of SNe Ia (Union2.1)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+notebook = ["matplotlib", "jupyter", "ipympl"]
+
+[tool.setuptools]
+packages = ["cosmo_library"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
